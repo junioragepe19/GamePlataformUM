@@ -1,7 +1,9 @@
 <template>
   <Header class="header" />
   <Hero />
-  <Populars />
+  <div>
+    <Populars url="/src/assets/Character.png" entry="Free" mode="1V1" prize="650" subtitle='League Of Legends' />
+  </div>
 </template>
 
 <script setup>

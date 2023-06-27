@@ -1,26 +1,46 @@
+<script setup>
+
+    defineProps({
+        url: {
+            type: String, default: ''},
+        title: {
+            type: String, default: ''},
+        subtitle: {
+            type: String, default: ''},    
+        entry: {
+            type: String, default: ''},
+        mode: {
+            type: String, default: ''},
+        prize: {
+            type: String, default: ''},
+        color: {
+            type: String, default: ''},
+    })
+</script>
+
 <template>
     <div class="d-flex">
         <div class="tournament">
             <div class="title">
                 <p class="bntitle black">Path <br>to Power</p>
-                <p class="subtitle">League of Legends</p>
+                <p class="subtitle">{{subtitle}}</p>
             </div>
             <div class="d-flex imglayer">
-            <img class="imgtour" src="../assets/Character.png" />
+            <img class="imgtour" :src="url" />
             </div>
             <div class="mainInfo">
                 <div class="infos d-flex">
                     <div class="topic">
                         <h1 class="titleTopic">Entry</h1>
-                        <p class="valueTopic">Free</p>
+                        <p class="valueTopic">{{entry}}</p>
                     </div>
                     <div class="topic">
                         <h1 class="titleTopic">Mode</h1>
-                        <p class="valueTopic">1V1</p>
+                        <p class="valueTopic">{{mode}}</p>
                     </div>
                     <div class="topic">
                         <h1 class="titleTopic">Prize</h1>
-                        <p class="valueTopic">$650</p>
+                        <p class="valueTopic">${{prize}}</p>
                     </div>
                 </div>
             </div>
