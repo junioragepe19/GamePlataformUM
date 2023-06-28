@@ -44,7 +44,9 @@
                         <h1 class="titleTopic">Prize</h1>
                         <p class="valueTopic">${{prize}}</p>
                     </div>
+                    <div class="interactive">
                     <InteractiveButton />
+                    </div>
                 </div>
             </div>
         </div>
@@ -53,6 +55,13 @@
 
 <style>
 @import '../app.scss';
+.interactive{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 .general{
     width: 25%;
     height: 60%;
@@ -80,6 +89,7 @@
     gap: 1rem;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     width: inherit;
     height: 4rem;
     background-color: rgba(0, 0, 0, 0.5);
