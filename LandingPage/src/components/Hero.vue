@@ -1,7 +1,7 @@
 <script setup>
     import CustomButton from './CustomButton.vue';
     import { ref, watch } from 'vue';
-    var countDownDate = new Date("June 28, 2023 17:00:00").getTime();
+    var countDownDate = new Date("July 05, 2023 17:00:00").getTime();
     var hours = ref(10);
     var minutes = ref(24);
     var seconds = ref(60);
@@ -54,36 +54,38 @@
                 <img class="img" src="../assets/Phoenix.png" />
             </div>
         
-        <div class="polygon">
-        </div>
-        <div class="content_video">
-            <div class="formatRight"></div>
-            <div class="formatBottom2"></div>
-            <div class="formatLeft"></div>
-            <div class="formatBottom"></div>
-            <div class="format d-flex">
-                <p class="date">June</p>
-                <p class="dateNumber">28</p>
-                <p class="dateFull">{{ isfinished ? formattedTime : "Expired" }}</p>
+        <div class="secondSection">
+            <div class="polygon">
             </div>
-            <div class="format2 d-flex">
-                <div v-if="!isVideoPlaying" class="play d-flex">
-                    <div class="componentPlay d-flex" @click="playVideo">
-                        <v-icon color="#D2E041" size="large">mdi-play</v-icon>
-                    </div>
+            <div class="content_video">
+                <div class="formatRight"></div>
+                <div class="formatBottom2"></div>
+                <div class="formatLeft"></div>
+                <div class="formatBottom"></div>
+                <div class="format d-flex">
+                    <p class="date">July</p>
+                    <p class="dateNumber">05</p>
+                    <p class="dateFull">{{ isfinished ? formattedTime : "Expired" }}</p>
                 </div>
-                <video class="video" id="video"
-                @pause="stopVideo"
-                @loadstart="this.volume=0.1"
-                poster="https://i0.wp.com/thegamerstation.com/wp-content/uploads/2023/03/Valorant-oynarken-nasil-cevrimdisi-offline-gorunebilirim.png?fit=1200%2C675&ssl=1" width="180" height="140">
-                    
-                    <source src="../assets/Trailer.mp4" type="video/mp4">
-                    
-                </video>    
-            </div>
-            <custom-button class="button" />
-            <div class="nameTournament">
-                <p class="bntitle">Valorant Tournament</p>
+                <div class="format2 d-flex">
+                    <div v-if="!isVideoPlaying" class="play d-flex">
+                        <div class="componentPlay d-flex" @click="playVideo">
+                            <v-icon color="#D2E041" size="large">mdi-play</v-icon>
+                        </div>
+                    </div>
+                    <video class="video" id="video"
+                    @pause="stopVideo"
+                    @loadstart="this.volume=0.1"
+                    poster="https://i0.wp.com/thegamerstation.com/wp-content/uploads/2023/03/Valorant-oynarken-nasil-cevrimdisi-offline-gorunebilirim.png?fit=1200%2C675&ssl=1" width="180" height="140">
+                        
+                        <source src="../assets/Trailer.mp4" type="video/mp4">
+                        
+                    </video>    
+                </div>
+                <custom-button class="button" />
+                <div class="nameTournament">
+                    <p class="bntitle">Valorant Tournament</p>
+                </div>
             </div>
         </div>
     </div>
@@ -91,7 +93,12 @@
 
 <style>
 @import '../app.scss';
-
+.secondSection{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
 .nameTournament{
     display: flex;
     position:absolute;
@@ -185,11 +192,9 @@
     font-size: 2rem;
 }
 .content_video{
-    position: absolute;
-    left: 36rem;
-    top: 15rem;
-    height: 100%;
-    width: 100%;
+    position: relative;
+    right: -35rem;
+    top:15rem;
 }
 .format2{
     position: absolute;
@@ -235,14 +240,15 @@
 .polygon{
     transform: rotate(45deg);
     position: absolute;
-    right: 10rem;
     height: 10rem;
     width: 10rem;
+    right: 10rem;
+    top: 10rem;
     flex-shrink: 0;
     background-color: #bef970;
     box-shadow: 1px 1px 96px 10px rgba(190,249,112,0.75);
--webkit-box-shadow: 1px 1px 96px 10px rgba(190,249,112,0.75);
--moz-box-shadow: 1px 1px 96px 10px rgba(190,249,112,0.75);
+    -webkit-box-shadow: 1px 1px 96px 10px rgba(190,249,112,0.75);
+    -moz-box-shadow: 1px 1px 96px 10px rgba(190,249,112,0.75);
 }
 .character{
     height: 100%;

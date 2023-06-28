@@ -1,6 +1,6 @@
 <template>
     <header class="d-flex header">
-        <div>
+        <div class="iconTitle">
             <p class="title">uis<span class="second">mode</span></p>
         </div>
         <nav class="d-flex gap-2 text-white text-">
@@ -19,6 +19,9 @@
 
 <style>
 @import '../app.scss';
+.iconTitle{
+    margin-top: -1.7rem;
+}
 .account{
     color: white;
 }
@@ -27,7 +30,6 @@ nav{
     gap: 2.5rem;
 }
 .title{
-    margin-top: -0.2rem;
     font-size: 1.5rem;
     color: white;
     font-family: 'a4speed';

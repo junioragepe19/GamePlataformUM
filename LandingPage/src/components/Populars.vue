@@ -1,5 +1,5 @@
 <script setup>
-
+    import InteractiveButton from './InteractiveButton.vue'
     defineProps({
         url: {
             type: String, default: ''},
@@ -15,15 +15,17 @@
             type: String, default: ''},
         color: {
             type: String, default: ''},
+        colorText: {
+            type: String, default: ''},
     })
 </script>
 
 <template>
-    <div class="d-flex">
-        <div class="tournament">
+    <div class="d-flex general">
+        <div class="tournament" :style="color">
             <div class="title">
-                <p class="bntitle black">Path <br>to Power</p>
-                <p class="subtitle">{{subtitle}}</p>
+                <p class="bntitle" :style="colorText">Path <br>to Power</p>
+                <p class="subtitle" :style="colorText">{{subtitle}}</p>
             </div>
             <div class="d-flex imglayer">
             <img class="imgtour" :src="url" />
@@ -42,6 +44,7 @@
                         <h1 class="titleTopic">Prize</h1>
                         <p class="valueTopic">${{prize}}</p>
                     </div>
+                    <InteractiveButton />
                 </div>
             </div>
         </div>
@@ -50,6 +53,10 @@
 
 <style>
 @import '../app.scss';
+.general{
+    width: 25%;
+    height: 60%;
+}
 .titleTopic{
     opacity: 0.6000000238418579;
     font-size: 16px;
@@ -81,7 +88,6 @@
 .subtitle{
     width: initial;
     font-family: 'Outfit';
-    color: black;
     font-size: 1rem;
 }
 .title{
@@ -110,9 +116,8 @@
 }
 .tournament{
     position: relative;
-    width: 18rem;
-    height: 22rem;
-    background-color: #BEF970;
+    width: 100%;
+    height: 100%;
     clip-path: polygon(56% 0, 78% 0, 100% 18%, 100% 100%, 71% 100%, 49% 100%, 0 100%, 0% 70%, 0 35%, 0 0);
 
 }
