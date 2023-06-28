@@ -1,7 +1,7 @@
 <template>
     <header class="d-flex header">
         <div class="iconTitle">
-            <p class="title">uis<span class="second">mode</span></p>
+            <p class="titleHeader">uis<span class="second">mode</span></p>
         </div>
         <nav class="d-flex gap-2 text-white text-">
             <a>tournaments</a>
@@ -29,7 +29,7 @@ nav{
     font-family: 'Outfit';
     gap: 2.5rem;
 }
-.title{
+.titleHeader{
     font-size: 1.5rem;
     color: white;
     font-family: 'a4speed';

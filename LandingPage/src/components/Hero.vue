@@ -47,7 +47,7 @@
         <h1 class="bgtitle d-flex">
             All the kings are fighting
         </h1>
-        <p class="subtitle">Hurry to join in the greatest Valorant tournament of all time. Fight till the end and get the reward</p>
+        <p class="subtitleHero">Hurry to join in the greatest Valorant tournament of all time. Fight till the end and get the reward</p>
             <div class="blur"></div>  
             <div class="character">
                   
@@ -261,7 +261,7 @@
     position: absolute;
     height: 80%;
 }
-.subtitle{
+.subtitleHero{
     position: relative;
     width: 33%;
     height: 50%;

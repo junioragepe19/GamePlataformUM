@@ -24,7 +24,7 @@
     <div class="d-flex general">
         <div class="tournament" :style="color">
             <div class="title">
-                <p class="bntitle" :style="colorText">Path <br>to Power</p>
+                <p class="bntitle" :style="colorText">{{title}}</p>
                 <p class="subtitle" :style="colorText">{{subtitle}}</p>
             </div>
             <div class="d-flex imglayer">
@@ -101,6 +101,7 @@
     font-size: 1rem;
 }
 .title{
+    white-space: pre-line;
     margin-left: 1.2rem;
     margin-top: 1.2rem;
     line-height: 3rem;
