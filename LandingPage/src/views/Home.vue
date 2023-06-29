@@ -12,6 +12,7 @@
     <Populars :url="Counter" entry="Free" color="background-color: #E6F0D8" colorText="color: #000" mode="5V5" prize="650" title="Cyl\nCSGO" subtitle='Counter Strike\nGlobal Offensive' />
   </div>
   <BrowseGames class="browseGames" />
+  <BecomeOrganizator />
 </template>
 
 <style>
@@ -50,5 +51,6 @@ import Counter from '../assets/CS.png';
 import Header from '@/components/Header.vue';
 import Populars from '@/components/Populars.vue';
 import Hero from '@/components/Hero.vue';
+import BecomeOrganizator from '@/components/BecomeOrganizator.vue';
 </script>
 

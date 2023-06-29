@@ -50,7 +50,7 @@
                         <p class="valueTopic">${{prize}}</p>
                     </div>
                     <div class="interactive">
-                    <InteractiveButton />
+                    <InteractiveButton icon="mdi-arrow-right" :is-icon="true" color="white" text-button="Join"  />
                     </div>
                 </div>
             </div>
