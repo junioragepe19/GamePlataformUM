@@ -11,11 +11,15 @@
     <Populars :url="Val" entry="Free" color="background-color: #46800A" colorText="color: #fff" mode="2V2" prize="650" title="Open fire all\nStars" subtitle='Valorant' />
     <Populars :url="Counter" entry="Free" color="background-color: #E6F0D8" colorText="color: #000" mode="5V5" prize="650" title="Cyl\nCSGO" subtitle='Counter Strike\nGlobal Offensive' />
   </div>
+  <BrowseGames class="browseGames" />
 </template>
 
 <style>
   @import '../app.scss';
 
+  .browseGames{
+    height: 50%;
+  }
   .view{
     text-align: right;
     color: white;
@@ -33,10 +37,12 @@
   }
   .populars{
     width: 100%;
-    height: 100vh;
+    height: 60vh;
+    margin-bottom: 5rem;
   }
 </style>
 <script setup>
+import BrowseGames from '@/components/BrowseGames.vue';
 import Ashe from '../assets/Character.png';
 import Pubg from '../assets/Pubg.png';
 import Val from '../assets/Omen.png';

@@ -19,9 +19,6 @@
 
 <style>
 @import '../app.scss';
-.iconTitle{
-    margin-top: -1.7rem;
-}
 .account{
     color: white;
 }
@@ -40,7 +37,7 @@ nav{
 .header{
     z-index: 999;
     align-items: start;
-    position: fixed;
+    position: relative;
     margin-top: 1rem;
     font-size: 1.2rem;
     width: 100%;

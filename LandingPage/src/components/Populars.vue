@@ -69,10 +69,10 @@
 
 .general{
     width: 25%;
-    height: 60%;
+    height: 100%;
 }
 .titleTopic{
-    opacity: 0.6000000238418579;
+    opacity: 0.75;
     font-size: 16px;
 }
 .valueTopic{
