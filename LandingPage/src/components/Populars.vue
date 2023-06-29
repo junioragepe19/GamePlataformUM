@@ -1,6 +1,7 @@
 <script setup>
     import InteractiveButton from './InteractiveButton.vue'
-    defineProps({
+    import { computed } from 'vue';
+    const props = defineProps({
         url: {
             type: String, default: ''},
         title: {
@@ -18,14 +19,18 @@
         colorText: {
             type: String, default: ''},
     })
+    const textReplaced = computed(() => {
+        return props.title.replace(/\\n/g, '\n') })
+    const subtextReplaced = computed(() => {
+        return props.subtitle.replace(/\\n/g, '\n') })
 </script>
 
 <template>
     <div class="d-flex general">
         <div class="tournament" :style="color">
             <div class="title">
-                <p class="bntitle" :style="colorText">{{title}}</p>
-                <p class="subtitle" :style="colorText">{{subtitle}}</p>
+                <p class="bntitle" :style="colorText">{{textReplaced}}</p>
+                <p class="subtitle" :style="colorText">{{subtextReplaced}}</p>
             </div>
             <div class="d-flex imglayer">
             <img class="imgtour" :src="url" />
@@ -99,6 +104,8 @@
     width: initial;
     font-family: 'Outfit';
     font-size: 1rem;
+    margin-top: 0.5rem;
+    line-height: 1.3rem;
 }
 .title{
     white-space: pre-line;
