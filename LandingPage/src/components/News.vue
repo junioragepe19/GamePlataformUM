@@ -1,5 +1,5 @@
 <script setup>
-
+    import { computed, ref } from 'vue';
     const values = defineProps({
         url:{
             type: String
@@ -14,13 +14,27 @@
             type: String
         }
     })
-
+    function activeHover(){
+        isHoving.value = true
+    }
+    function desActiveHover(){
+        isHoving.value = false
+    }
+    const isHoving = ref(false);
+    const isHover = computed( () => {
+        return isHoving.value
+    })
 </script>
 
 
 <template>
     <div class="mainNews d-flex">
-        <img :src="url">
+        
+        <div class="d-flex imgNews">
+            <div class="layerCover" @mouseenter="activeHover" @mouseout="desActiveHover" :class="isHover ? 'cover' : ''">
+            </div>
+            <img :src="url">
+        </div>
         <div class="d-flex user d-flex-row">
             <img :src="avatar">
             <p>{{name}}</p>
@@ -32,7 +46,29 @@
 
 <style>
 @import '../app.scss';
-
+.layerCover{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease-in-out;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+     top: 0;
+}
+.cover{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.cover::before{
+    content: 'View Post';
+}
+.imgNews{
+    position: relative;
+    height: 50%;
+    width: 100%;
+    overflow: hidden;
+}
 .titleNews{
     margin-left: 2rem;
     font-size: 18px;
