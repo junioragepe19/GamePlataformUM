@@ -58,7 +58,7 @@
      top: 0;
 }
 .cover{
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 .cover::before{
     content: 'View Post';

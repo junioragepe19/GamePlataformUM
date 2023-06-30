@@ -15,10 +15,10 @@ import Avatar1 from '../assets/Avatar.svg';
 import Avatar2 from '../assets/Avatar1.svg';
 import Avatar3 from '../assets/Avatar2.svg';
 import Avatar4 from '../assets/Avatar3.svg';
-import { VBottomNavigation } from 'vuetify/lib/components/index.mjs';
 import BecomeOrganizator from '@/components/BecomeOrganizator.vue';
 import { computed, ref } from 'vue';
 import News from '@/components/News.vue';
+import InteractiveButton from '@/components/InteractiveButton.vue';
 
 const isHoving = ref(false);
 
@@ -48,24 +48,32 @@ const valueHover = computed( () => {
   </div>
   <BrowseGames class="browseGames"/>
   <BecomeOrganizator class="organization"/>
-  <div>
+  <div class="newsSection">
     <div class="d-flex d-flex-row newsMenu">
-      <div class="titleSectionNews">News</div>
-      <button value="game">
-        Game
-      </button>
-    
-      <button value="tournament"> 
-        Tournaments
-      </button>
-
-      <button value="xbox">
-        Xbox
-      </button>
-
-      <button value="xbox">
-        PC
-      </button>
+      <div class="d-flex d-flex-row navMenu">
+        <div class="titleSectionNews">News</div>
+        <div class="d-flex d-flex-row menuOptions">
+          <button value="latest">
+            Latest
+          </button>
+          <button value="game">
+            Game
+          </button>
+          <button value="tournament"> 
+            Tournaments
+          </button>
+          <button value="xbox">
+            Xbox
+          </button>
+          <button value="xbox">
+            PC
+          </button>
+        </div>
+      </div>
+      <div class="input">
+        <input placeholder="Search"/>
+        <v-icon class="iconInput">mdi-magnify</v-icon>
+      </div>
     </div>
     <div class="d-flex d-flex-row news">
       <News  :url="HorizonPost" :avatar="Avatar1" name="Avery Jackson" title="Unveiling the Hidden Wonders of Nature: Exploring the World Beyond the Horizon"  />
@@ -73,23 +81,64 @@ const valueHover = computed( () => {
       <News  :url="GTAPost" :avatar="Avatar3" name="Angel Richards" title=" Exploring the Beauty of the Great Outdoors"  />
       <News  :url="TombPost" :avatar="Avatar4" name="Bobby Harrison" title="Shadows of Destiny - Unraveling Ancient Mysteries"  />
     </div>
+    <div class="buttonNews">
+      <InteractiveButton class="buttonMoreNews" :isIcon="true" icon="mdi-plus" textButton="Load More" color="white" colorText="black" />
+    </div>
   </div>
 </template>
 
 <style>
   @import '../app.scss';
+  .buttonMoreNews{
+    width: 10%;
+    margin-bottom: 2rem;
+  }
+  .buttonNews{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    width: 100%;
+    height: 20%;
+  }
+  .navMenu{
+    margin-bottom: 1.5rem;
+  }
+  .menuOptions{
+    gap: 2rem;
+  }
+  .iconInput{
+    right: 0.2rem;
+    position: absolute;
+    color: white;
+    z-index: 10;
+  }
+  .input{
+    margin-bottom: 1.5rem;
+    position: relative;
+    font-family: 'Outfit';
+    border-bottom: 1px solid white;
+    color: white;
+  }
+  input{
+    padding-right: 2rem;
+    padding-left: 0.5rem;
+    color: white !important;
+  }
+  button:focus{
+    border-bottom: 1px solid #BEF970;
+  }
   .titleSectionNews{
-    margin-right: 1rem;
+    margin-right: 3rem;
     font-family: 'Outfit';
   }
   .newsMenu{
+    margin-bottom: 1rem;
     margin: 0 auto;
     width: 83%;
-    justify-content: start;
+    justify-content:space-between;
     font-family: 'bnTitle';
     color: white;
-    gap: 2rem;
-    margin-bottom: 1rem;
+
   }
   .organization{
     margin-bottom: 5rem;
