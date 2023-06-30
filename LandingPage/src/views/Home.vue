@@ -85,10 +85,67 @@ const valueHover = computed( () => {
       <InteractiveButton class="buttonMoreNews" :isIcon="true" icon="mdi-plus" textButton="Load More" color="white" colorText="black" />
     </div>
   </div>
+  <div class="subscribe">
+    <div class="blurLeft"></div>
+    <div class="blurRight"></div>
+    <p class="textSubscribe">SUBSCRIBE AND RECEIVE OUR NEWSLETTER 
+      TO FOLLOW THE NEWS</p>
+    <div class="input inputDiv">
+    <input placeholder="Enter Email Adress"/>
+    <InteractiveButton class="buttonSubscribe" textButton="Send" color="#99EE2D" colorText="black" />
+    </div>
+  </div>
 </template>
 
 <style>
   @import '../app.scss';
+
+  .buttonSubscribe{
+    width: 7rem;
+    height: 100%;
+  }
+  .inputDiv{
+    height: 5rem;
+    padding-top: 2rem;
+    display: flex;
+  }
+  .textSubscribe{
+    text-align: center;
+    width: 50%;
+    color: white;
+    font-family: 'bntitle';
+    font-size: 3.3rem;
+  }
+  .blurRight{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 30%;
+    width: 20%;
+    border-radius: 523px;
+    background:  #2DEED7;
+    filter: blur(150px);
+  }
+  .blurLeft{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 50%;
+    width: 20%;
+    border-radius: 523px;
+    background:  #99EE2D;
+    filter: blur(150px);
+  }
+  .subscribe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url('../assets/BgImage1.png');
+    width: 100%;
+    height: 70vh;
+  }
   .buttonMoreNews{
     width: 10%;
     margin-bottom: 2rem;
@@ -122,6 +179,9 @@ const valueHover = computed( () => {
   input{
     padding-right: 2rem;
     padding-left: 0.5rem;
+    color: white !important;
+  }
+  input::-webkit-input-placeholder {
     color: white !important;
   }
   button:focus{
