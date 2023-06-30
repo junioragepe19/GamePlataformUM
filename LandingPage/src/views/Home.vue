@@ -15,7 +15,7 @@ import Avatar1 from '../assets/Avatar.svg';
 import Avatar2 from '../assets/Avatar1.svg';
 import Avatar3 from '../assets/Avatar2.svg';
 import Avatar4 from '../assets/Avatar3.svg';
-
+import { VBottomNavigation } from 'vuetify/lib/components/index.mjs';
 import BecomeOrganizator from '@/components/BecomeOrganizator.vue';
 import { computed, ref } from 'vue';
 import News from '@/components/News.vue';
@@ -48,18 +48,49 @@ const valueHover = computed( () => {
   </div>
   <BrowseGames class="browseGames"/>
   <BecomeOrganizator class="organization"/>
-  <div class="d-flex d-flex-row news">
-    <News  :url="HorizonPost" :avatar="Avatar1" name="Avery Jackson" title="Unveiling the Hidden Wonders of Nature: Exploring the World Beyond the Horizon"  />
-    <News  :url="CallPost" :avatar="Avatar2" name="Jerome Mckinney" title="A New Era of Call of Duty Warfare"  />
-    <News  :url="GTAPost" :avatar="Avatar3" name="Angel Richards" title=" Exploring the Beauty of the Great Outdoors"  />
-    <News  :url="TombPost" :avatar="Avatar4" name="Bobby Harrison" title="Shadows of Destiny - Unraveling Ancient Mysteries"  />
+  <div>
+    <div class="d-flex d-flex-row newsMenu">
+      <div class="titleSectionNews">News</div>
+      <button value="game">
+        Game
+      </button>
+    
+      <button value="tournament"> 
+        Tournaments
+      </button>
+
+      <button value="xbox">
+        Xbox
+      </button>
+
+      <button value="xbox">
+        PC
+      </button>
+    </div>
+    <div class="d-flex d-flex-row news">
+      <News  :url="HorizonPost" :avatar="Avatar1" name="Avery Jackson" title="Unveiling the Hidden Wonders of Nature: Exploring the World Beyond the Horizon"  />
+      <News  :url="CallPost" :avatar="Avatar2" name="Jerome Mckinney" title="A New Era of Call of Duty Warfare"  />
+      <News  :url="GTAPost" :avatar="Avatar3" name="Angel Richards" title=" Exploring the Beauty of the Great Outdoors"  />
+      <News  :url="TombPost" :avatar="Avatar4" name="Bobby Harrison" title="Shadows of Destiny - Unraveling Ancient Mysteries"  />
+    </div>
   </div>
-  A New Era of Call of Duty Warfare
 </template>
 
 <style>
   @import '../app.scss';
-
+  .titleSectionNews{
+    margin-right: 1rem;
+    font-family: 'Outfit';
+  }
+  .newsMenu{
+    margin: 0 auto;
+    width: 83%;
+    justify-content: start;
+    font-family: 'bnTitle';
+    color: white;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
   .organization{
     margin-bottom: 5rem;
   }

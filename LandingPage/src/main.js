@@ -6,7 +6,10 @@
 
 // Components
 import App from './App.vue'
-
+import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
 // Composables
 import { createApp } from 'vue'
 
@@ -14,7 +17,10 @@ import { createApp } from 'vue'
 import { registerPlugins } from '@/plugins'
 
 const app = createApp(App)
-
+const vuetify = createVuetify({
+    components,
+    directives,
+  })
 registerPlugins(app)
 
-app.mount('#app')
+app.use(vuetify).mount('#app')
