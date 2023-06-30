@@ -12,12 +12,13 @@ import { computed, ref } from 'vue';
 
 const isHoving = ref(false);
 
-function changeHover(){
-  console.log(isHoving.value)
-  isHoving.value = !isHoving.value;
-  console.log(isHoving.value)
+function activeHover(){
+  isHoving.value = true
 }
 
+function desActiveHover(){
+  isHoving.value = false;
+}
 const valueHover = computed( () => {
   return isHoving.value; })
 </script>
@@ -30,10 +31,10 @@ const valueHover = computed( () => {
     <p class="view">View All</p>
   </div>
   <div class="d-flex d-flex-column populars">
-    <Populars class="popular" @mouseenter.once="changeHover" @mouseleave="changeHover" :class="valueHover ? 'nothover' : ''" :url="Ashe" entry="Free" color="background-color: #BEF970" colorText="color: #000" mode="1V1" prize="650" title="Path\nto Power" subtitle='League Of Legends' />
-    <Populars class="popular" :url="Pubg" entry="Free" @mouseenter="changeHover" @mouseleave="changeHover" :class="valueHover ? 'nothover' : ''"  color="background-color: #E6F0D8" colorText="color: #000" mode="2V2" prize="50" title="Dutiful\nDeathMatch" subtitle='Playerunknown`s\nBattlegrounds ' />
-    <Populars class="popular" :url="Val" entry="Free" @mouseenter="changeHover" @mouseleave="changeHover" :class="valueHover ? 'nothover' : ''" color="background-color: #46800A" colorText="color: #fff" mode="2V2" prize="650" title="Open fire all\nStars" subtitle='Valorant' />
-    <Populars class="popular" :url="Counter" entry="Free" @mouseenter="changeHover" @mouseleave="changeHover" :class="valueHover ? 'nothover' : ''" color="background-color: #E6F0D8" colorText="color: #000" mode="5V5" prize="650" title="Cyl\nCSGO" subtitle='Counter Strike\nGlobal Offensive' />
+    <Populars class="popular" @mouseenter="activeHover" @mouseleave="desActiveHover" :class="valueHover ? 'nothover' : ''" :url="Ashe" entry="Free" color="background-color: #BEF970" colorText="color: #000" mode="1V1" prize="650" title="Path\nto Power" subtitle='League Of Legends' />
+    <Populars class="popular" :url="Pubg" entry="Free" @mouseenter="activeHover" @mouseleave="desActiveHover" :class="valueHover ? 'nothover' : ''"  color="background-color: #E6F0D8" colorText="color: #000" mode="2V2" prize="50" title="Dutiful\nDeathMatch" subtitle='Playerunknown`s\nBattlegrounds ' />
+    <Populars class="popular" :url="Val" entry="Free" @mouseenter="activeHover" @mouseleave="desActiveHover" :class="valueHover ? 'nothover' : ''" color="background-color: #46800A" colorText="color: #fff" mode="2V2" prize="650" title="Open fire all\nStars" subtitle='Valorant' />
+    <Populars class="popular" :url="Counter" entry="Free" @mouseenter="activeHover" @mouseleave="desActiveHover" :class="valueHover ? 'nothover' : ''" color="background-color: #E6F0D8" colorText="color: #000" mode="5V5" prize="650" title="Cyl\nCSGO" subtitle='Counter Strike\nGlobal Offensive' />
   </div>
   <BrowseGames class="browseGames"/>
   <BecomeOrganizator />
