@@ -7,8 +7,18 @@ import Counter from '../assets/CS.png';
 import Header from '@/components/Header.vue';
 import Populars from '@/components/Populars.vue';
 import Hero from '@/components/Hero.vue';
+import HorizonPost from '../assets/HorizonPost.png'
+import CallPost from '../assets/CallPost.png'
+import GTAPost from '../assets/GTAPost.png'
+import TombPost from '../assets/TombPost.png'
+import Avatar1 from '../assets/Avatar.svg';
+import Avatar2 from '../assets/Avatar1.svg';
+import Avatar3 from '../assets/Avatar2.svg';
+import Avatar4 from '../assets/Avatar3.svg';
+
 import BecomeOrganizator from '@/components/BecomeOrganizator.vue';
 import { computed, ref } from 'vue';
+import News from '@/components/News.vue';
 
 const isHoving = ref(false);
 
@@ -37,11 +47,27 @@ const valueHover = computed( () => {
     <Populars class="popular" :url="Counter" entry="Free" @mouseenter="activeHover" @mouseleave="desActiveHover" :class="valueHover ? 'nothover' : ''" color="background-color: #E6F0D8" colorText="color: #000" mode="5V5" prize="650" title="Cyl\nCSGO" subtitle='Counter Strike\nGlobal Offensive' />
   </div>
   <BrowseGames class="browseGames"/>
-  <BecomeOrganizator />
+  <BecomeOrganizator class="organization"/>
+  <div class="d-flex d-flex-row news">
+    <News  :url="HorizonPost" :avatar="Avatar1" name="Avery Jackson" title="Unveiling the Hidden Wonders of Nature: Exploring the World Beyond the Horizon"  />
+    <News  :url="CallPost" :avatar="Avatar2" name="Jerome Mckinney" title="A New Era of Call of Duty Warfare"  />
+    <News  :url="GTAPost" :avatar="Avatar3" name="Angel Richards" title=" Exploring the Beauty of the Great Outdoors"  />
+    <News  :url="TombPost" :avatar="Avatar4" name="Bobby Harrison" title="Shadows of Destiny - Unraveling Ancient Mysteries"  />
+  </div>
+  A New Era of Call of Duty Warfare
 </template>
 
 <style>
   @import '../app.scss';
+
+  .organization{
+    margin-bottom: 5rem;
+  }
+  .news{
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 
   .browseGames{
     height: 50%;
