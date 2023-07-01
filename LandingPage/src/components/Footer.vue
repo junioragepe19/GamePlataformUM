@@ -126,7 +126,7 @@ const socialMedias = [{'name': 'Twitch', 'icon': 'mdi-twitch' },{'name':  'Insta
         margin-left: 5rem;
         margin-right: 5rem;
         margin-top: 5rem;
-        width: 50%;
+        width: 40rem;
         height: 100%;
         display: flex;
         flex-direction: row;
