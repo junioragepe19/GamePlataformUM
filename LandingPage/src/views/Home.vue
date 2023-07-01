@@ -19,6 +19,7 @@ import BecomeOrganizator from '@/components/BecomeOrganizator.vue';
 import { computed, ref } from 'vue';
 import News from '@/components/News.vue';
 import InteractiveButton from '@/components/InteractiveButton.vue';
+import Footer from '@/components/Footer.vue';
 
 const isHoving = ref(false);
 
@@ -95,6 +96,8 @@ const valueHover = computed( () => {
     <InteractiveButton class="buttonSubscribe" textButton="Send" color="#99EE2D" colorText="black" />
     </div>
   </div>
+
+  <Footer />
 </template>
 
 <style>
@@ -120,7 +123,7 @@ const valueHover = computed( () => {
     position: absolute;
     top: 50%;
     right: 0;
-    height: 30%;
+    height: 20%;
     width: 20%;
     border-radius: 523px;
     background:  #2DEED7;
@@ -130,7 +133,7 @@ const valueHover = computed( () => {
     position: absolute;
     top: 50%;
     left: 0;
-    height: 50%;
+    height: 20%;
     width: 20%;
     border-radius: 523px;
     background:  #99EE2D;
