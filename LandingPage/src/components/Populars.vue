@@ -91,6 +91,7 @@
     align-items: flex-end;
 }
 .infos{
+    user-select: none;
     gap: 1rem;
     flex-direction: row;
     justify-content: center;

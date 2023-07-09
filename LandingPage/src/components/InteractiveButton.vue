@@ -36,6 +36,7 @@
 
 
 .buttonInterative{
+    cursor: pointer;
     font-family: 'bntitle';
     font-size: 1.3rem;
     gap: 8;
