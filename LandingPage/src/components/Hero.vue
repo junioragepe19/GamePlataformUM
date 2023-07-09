@@ -1,7 +1,7 @@
 <script setup>
     import CustomButton from './CustomButton.vue';
     import { ref, watch } from 'vue';
-    var countDownDate = new Date("July 05, 2023 17:00:00").getTime();
+    var countDownDate = new Date("July 15, 2023 17:00:00").getTime();
     var hours = ref(10);
     var minutes = ref(24);
     var seconds = ref(60);
@@ -64,7 +64,7 @@
                 <div class="formatBottom"></div>
                 <div class="format d-flex">
                     <p class="date">July</p>
-                    <p class="dateNumber">05</p>
+                    <p class="dateNumber">15</p>
                     <p class="dateFull">{{ isfinished ? formattedTime : "Expired" }}</p>
                 </div>
                 <div class="format2 d-flex">
