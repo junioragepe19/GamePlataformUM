@@ -37,7 +37,7 @@ const valueHover = computed( () => {
 <template>
   <Header class="header" />
   <Hero />
-  <div class="d-flex w-full titlePopular">
+  <!-- <div class="d-flex w-full titlePopular">
     <div class="titlePopular">Popular Tournaments</div>
     <p class="view">View All</p>
   </div>
@@ -97,7 +97,7 @@ const valueHover = computed( () => {
     </div>
   </div>
 
-  <Footer />
+  <Footer /> -->
 </template>
 
 <style>

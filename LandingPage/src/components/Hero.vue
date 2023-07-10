@@ -41,12 +41,11 @@
     }
     function playVideo(){
         isVideoPlaying.value = true;
-        document.getElementById('video').play();
     }
 </script>
 
 <template>
-    <div class="background d-flex" :style="width < 1100 ? 'flex-direction: column' : ''" >
+    <div class="background d-flex" :style="mobile ? 'flex-direction: column' : ''" >
         <div class="firstSection d-flex flex-column">
             <h1 class="bgtitle d-flex">
                 All the kings are fighting
@@ -70,21 +69,36 @@
                         <p class="dateFull">{{ isfinished ? formattedTime : "Expired" }}</p>
                     </div>
                     <div class="format2 d-flex d-flex-column">
-                        <div v-if="!isVideoPlaying" class="play d-flex">
-                            <div class="componentPlay d-flex" @click="playVideo">
-                                <v-icon color="#D2E041" size="large">mdi-play</v-icon>
+                        
+                        <v-dialog
+                        transition="dialog-bottom-transition"
+                        width="auto"
+                      >
+                        <template v-slot:activator="{ props }">
+                            <div class="imgVideo" v-bind="props">
+                                <div v-if="!isVideoPlaying" class="play d-flex">
+                                    <div class="componentPlay d-flex" @click="playVideo">
+                                        <v-icon color="#D2E041" size="large">mdi-play</v-icon>
+                                    </div>
+                                </div>
+                                <img @click="isActive.value = true"
+                                src="https://i0.wp.com/thegamerstation.com/wp-content/uploads/2023/03/Valorant-oynarken-nasil-cevrimdisi-offline-gorunebilirim.png?fit=1200%2C675&ssl=1" class="imgVideoContent"/>
                             </div>
-                        </div>
-                        <video class="video" id="video"
-                        @pause="stopVideo"
-                        @loadstart="this.volume=0.1"
-                        poster="https://i0.wp.com/thegamerstation.com/wp-content/uploads/2023/03/Valorant-oynarken-nasil-cevrimdisi-offline-gorunebilirim.png?fit=1200%2C675&ssl=1" width="180" height="140">
-                            
-                            <source src="../assets/Trailer.mp4" type="video/mp4">
-                        </video>   
+                        </template>
+                        <template v-slot:default="{ isActive }">
+                            <video
+                            @pause="stopVideo"
+                            autoplay
+                            @loadstart="this.volume=0.1"
+                            poster="https://i0.wp.com/thegamerstation.com/wp-content/uploads/2023/03/Valorant-oynarken-nasil-cevrimdisi-offline-gorunebilirim.png?fit=1200%2C675&ssl=1">
+                                
+                                <source src="../assets/Trailer.mp4" type="video/mp4">
+                            </video>
+                        </template>
+                      </v-dialog>
+                         
                     </div>
                 </div>
-                
                 <!-- <div class="join">
                     <interactive-button text-button="Join Tournament" :is-icon='true' color-text="black" color="#99EE2D" icon="mdi-arrow-right-thick" />
                 </div>  -->
@@ -99,6 +113,14 @@
 
 <style>
 @import '../app.scss';
+.imgVideoContent{
+    width: 100%;
+    height: 100%;
+}
+.imgVideo{
+    width: 100%;
+    height: 100%;
+}
 .firstSection{
     position: relative;
     width: 100%;
@@ -127,7 +149,7 @@
 .secondSection{
     position: relative;
     width: 60%;
-    height: 100%;
+    height: 100vh;
 }
 .nameTournament{
     display: flex;
@@ -199,10 +221,10 @@
 }
 .format2{
     position: absolute;
-    right: 1%;
-    top: 7%;
-    height: 50%;
-    width: 57%;
+    right: 4%;
+    top: 10%;
+    height: 44%;
+    width: 56%;
 }
 .format{
     clip-path: polygon(50% 0%, 100% 0, 100% 63%, 37% 62%, 37% 100%, 0 100%, 0 0);
@@ -260,7 +282,7 @@
     background-image: url('../assets/BgImage.png');
     background-position: 100%;
     background-size:cover;
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 </style>
